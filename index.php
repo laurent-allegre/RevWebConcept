@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Reveal Bootstrap Template</title>
+  <title>WebConceptSite Template</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -59,9 +59,9 @@
     <div class="container d-flex justify-content-between">
 
       <div id="logo">
-        <h1><a href="index.html">WebConcept<span>Site</span></a></h1>
+        <h1><a href="index.php">WebConcept<span>Site</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
-        <!-- <a href="index.html"><img src="assets/img/logo.png" alt=""></a>-->
+        <!-- <a href="index.php"><img src="assets/img/logo.png" alt=""></a>-->
       </div>
 
       <nav id="navbar" class="navbar">
@@ -70,7 +70,7 @@
           <li><a class="nav-link scrollto" href="#about">Présentation</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="#team">connexion</a></li>
+          <li><a class="nav-link scrollto" href="./admins/login.php">connexion</a></li>
 
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
