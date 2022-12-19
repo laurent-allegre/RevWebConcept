@@ -1,3 +1,21 @@
+<?php
+
+include_once __DIR__ . "/admins/inc/database.php";
+
+try{
+    $db = new pdo("mysql: host=" . Database::HOST . "; port=" . Database::PORT . "; dbname=" . Database::DBNAME . "; charset=utf8;",Database::DBUSER, Database::DBPASS , array(
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    ));
+}catch(PDOException $pe){
+    echo $pe->getMessage();
+}
+
+$req = "SELECT * FROM cartes";
+$stmt = $db->prepare($req);
+$stmt->execute();
+$cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,7 +29,7 @@
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
-  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
 
   <!-- Google Fonts -->
   <link
@@ -214,276 +232,40 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Mes Réalisations</h2>
+          <h2>Mes Réalisations :</h2>
           <p>PROJETS QUI M'ONT PERMIS D'ACQUÉRIR DE L'EXPÉRIENCE.</p>
         </div>
-
+          <br>
         <div class="row">
-          <div class="col-lg-12 d-flex justify-content-center">
+        <!--  <div class="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" class="filter-active">Tous</li>
-              <li data-filter=".filter-app">Personnel</li>
+              <li data-filter=".perso">Personnel</li>
               <li data-filter=".filter-card">Commerce</li>
               <li data-filter=".filter-web">Location</li>
             </ul>
-          </div>
+          </div> -->
         </div>
 
         <div class="row portfolio-container">
+            <?php foreach ($cartes as $carte) : ?>
+              <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item  mb-4">
+                <div class="portfolio-wrap">
+                  <img src="assets/img/portfolio/<?= $carte['images']; ?>" class="img-fluid" alt="">
+                      <div class="portfolio-info">
+                        <h4><?= $carte['titre']; ?></h4>
+                        <p><?= $carte['info']; ?></p> <br>
+                        <p><?= $carte['langages']; ?></p>
+                      </div>
+                      <div class="portfolio-links">
+                        <a href="assets/img/portfolio/<?= $carte['images']; ?>" data-gall="portfolioGallery" class="venobox"
+                          title="le lien"><i class="bx bx-plus"></i></a>
+                        <a href="<?= $carte['liens']; ?>" title="Lien vers le site"><i class="bx bx-link"></i></a>
+                      </div>
+                </div>
+              </div>
 
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-app mb-4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/webConceptSite.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Web Concept Site</h4>
-                <p>Création de site internet</p> <br>
-                <p>Html css bootstrap php</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/webConceptSite.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Web Concept Site"><i class="bx bx-plus"></i></a>
-                <a href="https://www.web-concept-site.fr/" title="Lien vers le site"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-app mb-4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/lesLauriers.jpg" class="img-fluid" alt="image">
-              <div class="portfolio-info">
-                <h4>Photo Provence Passion</h4>
-                <p>Photographe</p> <br>
-                <p>Wordpress</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/photo-provence-passion.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Photo Provence Passion"><i class="bx bx-plus"></i></a>
-                <a href="https://www.photo-provence-passion.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-card mb-4">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="image">
-              <div class="portfolio-info">
-                <h4>La Bonne Auberge </h4>
-                <p>site pour un restaurant</p> <br>
-                <p>Wordpress</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/restaurant.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="La Bonne Auberge"><i class="bx bx-plus"></i></a>
-                <a href="https://labonneauberge.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-          <br>
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-web mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="image">
-              <div class="portfolio-info">
-                <h4>Gite le Lavandin</h4>
-                <p>Site de location de gites avec réservation</p> <br>
-                <p>Wordpress</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/le lavandin.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Gite le Lavandin"><i class="bx bx-plus"></i></a>
-                <a href="https://www.gite-le-lavandin.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-card mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="image">
-              <div class="portfolio-info">
-                <h4>Lj Coiffure</h4>
-                <p>Coiffeur</p> <br>
-                <p>Wordpress</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/coiffeur.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Lj Coiffure"><i class="bx bx-plus"></i></a>
-                <a href="https://lj-coiffure-barbier.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-card mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="image">
-              <div class="portfolio-info">
-                <h4>Iba Propreté</h4>
-                <p>Site société de nettoyage</p><br>
-                <p>Html css bootstrap php</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/ibaproprete54.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Iba Propreté"><i class="bx bx-plus"></i></a>
-                <a href="https://ibaproprete54.com/index.php" title="Lien vers le site"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-          <br>
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-card mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="image">
-              <div class="portfolio-info">
-                <h4>Bio Monteux</h4>
-                <p>Site pour commerce avec Woo commerce</p> <br>
-                <p>Wordpress Woo commerce</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Bio Monteux-1.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Bio Monteux"><i class="bx bx-plus"></i></a>
-                <a href="https://bio-monteux.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-card mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/paysagiste-en-provence.jpg" class="img-fluid" alt="image">
-              <div class="portfolio-info">
-                <h4>paysagiste-en-provence</h4>
-                <p>Site pour des Paysagiste</p> <br>
-                <p>Html css bootstrap php</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/paysagiste-en-provence.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="paysagiste-en-provence"><i class="bx bx-plus"></i></a>
-                <a href="https://paysagiste-en-provence.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-app mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/template.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Template</h4>
-                <p>avec gestion des émails en basse de données</p> <br>
-                <p>Html css bootstrap php</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/template.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Template"><i class="bx bx-plus"></i></a>
-                <a href="https://mailindb.web-concept-site.fr/" title="Lien vers le site"><i class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-card mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/cristinabeauté.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Cristina Beauté</h4>
-                <p>Site pour institut de beauté</p><br>
-                <p>Wordpress</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/cristinabeauté.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Template"><i class="bx bx-plus"></i></a>
-                <a href="https://cristinabeaute.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-app mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/catalog.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Catalogue Php</h4>
-                <p>Catalogue et appel d'une API météo</p> <br>
-                <p>Html css bootstrap php</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/catalog.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Catalogue PHP"><i class="bx bx-plus"></i></a>
-                <a href="https://catalogue.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-card mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/Boutiquesymfony.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Monteux Boutique</h4>
-                <p>Site E-commerce avec tunnel d'achat</p><br>
-                <p>Symfony 5</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Boutiquesymfony.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Boutique e-commerce"><i class="bx bx-plus"></i></a>
-                <a href="https://monteuxboutique.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-web mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/gite-les-lauriers.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Gîte-les-lauriers</h4>
-                <p>Site de location pour maison gîte de vacance</p><br>
-                <p>Wordpress</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/gite-les-lauriers.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Site de location pour maison gîte de vacance"><i class="bx bx-plus"></i></a>
-                <a href="https://giteleslauriers.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-card mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/portfolio1.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Burger Code</h4>
-                <p>Site vitrine en php + administration</p><br>
-                <p>Html css bootstrap php</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/Burger-code.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Site vitrine en php + administration"><i class="bx bx-plus"></i></a>
-                <a href="https://burgercode.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item filter-card mb-1">
-            <div class="portfolio-wrap">
-              <img src="assets/img/portfolio/prestance.jpg" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>Prestance Autos</h4>
-                <p>Site de vente de véhicules de luxe</p> <br>
-                <p>Html css bootstrap php</p>
-              </div>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/prestance.jpg" data-gall="portfolioGallery" class="venobox"
-                  title="Site de vente de véhicules de luxe"><i class="bx bx-plus"></i></a>
-                <a href="https://prestanceautos.web-concept-site.fr/" title="Lien vers le site"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-
+            <?php endforeach; ?>
 
         </div>
 

@@ -7,7 +7,7 @@ include_once __DIR__ . "/inc/database.php";
 
 try {
     $db = new PDO(
-        "mysql: host=" . Database::HOST . "; port=" . Database::PORT . "; dbname=" . Database::DBNAME . "; charsert=utf8;",
+        "mysql: host=" . Database::HOST . "; port=" . Database::PORT . "; dbname=" . Database::DBNAME . "; charset=utf8;",
         Database::DBUSER,
         Database::DBPASS,
         array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION)
@@ -16,13 +16,14 @@ try {
     echo $pe->getMessage();
 }
 
-$titreError = $infoError = $liensError = $filtercardError = $imagesError = $titre = $info = $liens = $filtercard = $images = "";
+$titreError = $infoError = $liensError = $filtercardError = $langagesError = $imagesError = $titre = $info = $liens = $filtercard = $langages = $images = "";
 
 if(!empty($_POST)) {
     $titre              = checkInput($_POST['titre']);
     $info               = checkInput($_POST['info']);
     $liens              = checkInput($_POST['liens']);
     $filtercard         = checkInput($_POST['filtercard']);
+    $langages           =checkInput($_POST['langages']);
     $images             = checkInput($_FILES["images"]["name"]);
     $imagePath          = '../assets/img/portfolio/'. basename($images);
     $imageExtension     = pathinfo($imagePath,PATHINFO_EXTENSION);
@@ -43,6 +44,10 @@ if(!empty($_POST)) {
     }
     if(empty($filtercard)) {
         $filtercardError = 'Ce champ ne peut pas être vide';
+        $isSuccess = false;
+    }
+    if(empty($langages)) {
+        $langagesError = 'Ce champ ne peut pas être vide';
         $isSuccess = false;
     }
     if(empty($images)) {
@@ -72,8 +77,8 @@ if(!empty($_POST)) {
     }
 
     if($isSuccess && $isUploadSuccess) {
-        $statement = $db->prepare("INSERT INTO cartes (titre,info,liens,filtercard,images) values(?, ?, ?, ?, ?)");
-        $statement->execute(array($titre,$info,$liens,$filtercard,$images));
+        $statement = $db->prepare("INSERT INTO cartes (titre,info,liens,filtercard,langages,images) values(?, ?, ?, ?, ?, ?)");
+        $statement->execute(array($titre,$info,$liens,$filtercard,$langages,$images));
 
         header("Location: index.php");
     }
@@ -125,6 +130,12 @@ function checkInput($data) {
                 <label class="form-label" for="liens">Liens</label>
                 <input type="text" class="form-control" id="liens" name="liens" placeholder="liens" value="<?php echo $liens;?>">
                 <span class="help-inline"><?php echo $liensError;?></span>
+            </div>
+            <br>
+            <div>
+                <label class="form-label" for="langages">Langues</label>
+                <input type="text" class="form-control" id="langages" name="langages" placeholder="langages" value="<?php echo $langages;?>">
+                <span class="help-inline"><?php echo $langagesError;?></span>
             </div>
             <br>
             <div>

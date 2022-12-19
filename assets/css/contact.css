@@ -5,12 +5,15 @@
   font-family: "Poppins", sans-serif;
 }
 .tact{
-  display: flex;
-  padding: 0 10px;
-  min-height: 50vh;
-  background: #50d8af;
+  width: 100%;
+  height: 60vh;
+  position: relative;
+  background: url("../img/hero-carousel/1.jpg") no-repeat;
   align-items: center;
   justify-content: center;
+  background-size: cover;
+  padding: 0;
+
 }
 ::selection{
   color: #fff;
