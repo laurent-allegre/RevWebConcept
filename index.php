@@ -232,8 +232,8 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <div class="container">
 
         <div class="section-title">
-          <h2>Mes Réalisations :</h2>
-          <p>PROJETS QUI M'ONT PERMIS D'ACQUÉRIR DE L'EXPÉRIENCE.</p>
+          <h2>Mes Réalisations : <span class="h5">Projets qui m'ont permis d'acquérir de l'expérience.</span></h2>
+
         </div>
           <br>
         <div class="row">
@@ -278,14 +278,13 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
       <div class="container" data-aos="zoom-out">
         <div class="row">
           <div class="col-lg-9 text-center text-lg-start">
-            <h3 class="cta-title">Besoin d'un photographe</h3>
+            <h2 class="cta-title">Besoin d'un photographe ?</h2>
             <p class="cta-text">Besoin d’images de qualité de votre maison, appartement, de votre hôtel, restaurant…
-              Pour vos annonces ou votre site Web… N’hésitez pas contactez-moi.
+            <p class="cta-text">Pour vos annonces ou votre site Web… N’hésitez pas contactez-moi.</p>
             </p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="https://www.photo-provence-passion.web-concept-site.fr/">Photo
-              Provence Passion</a>
+            <a class="cta-btn align-middle" href="https://www.photo-provence-passion.web-concept-site.fr/">Rendez-vous sur <br> Photo Provence Passion.</a>
           </div>
         </div>
       </div>
