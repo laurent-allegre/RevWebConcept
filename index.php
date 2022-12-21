@@ -88,8 +88,6 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <li><a class="nav-link scrollto" href="#about">Présentation</a></li>
           <li><a class="nav-link scrollto" href="#services">Services</a></li>
           <li><a class="nav-link scrollto " href="#portfolio">Portfolio</a></li>
-          <li><a class="nav-link scrollto" href="./admins/login.php">connexion</a></li>
-
           <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -155,6 +153,8 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
               <li><i class="bi bi-globe2"> SEO & ACCESSIBILITÉ</i>
                 <p>Référencement naturel boosté par les bonnes pratiques de la sémantique vous avez la garantie d'un
                   référencement SEO efficace et durable.</p>
+                <p>un site mobile-friendly (Votre page Web est-elle adaptée aux mobiles ?), critère essentiel avec le déploiement des mises à jour dédiées à ce sujet sur Google depuis 2015 ;</p>
+                <p>une exploration optimisé pour les robots d’indexation des moteurs de recherche ;</p>
               </li>
             </ul>
 
@@ -251,7 +251,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php foreach ($cartes as $carte) : ?>
               <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item  mb-4">
                 <div class="portfolio-wrap">
-                  <img src="assets/img/portfolio/<?= $carte['images']; ?>" class="img-fluid" alt="">
+                  <img src="assets/img/portfolio/<?= $carte['images']; ?>" class="img-fluid" alt="image du site choisis">
                       <div class="portfolio-info">
                         <h4><?= $carte['titre']; ?></h4>
                         <p><?= $carte['info']; ?></p> <br>
@@ -371,7 +371,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <footer id="footer">
     <div class="container">
       <div class="copyright">
-        &copy; Copyright 2022<strong> Web Concept Site</strong>. All Rights Reserved
+        <a href="./admins/login.php"> &copy;</a> Copyright 2022   <strong> Web Concept Site</strong>. All Rights Reserved
       </div>
       <div class="credits">
 
