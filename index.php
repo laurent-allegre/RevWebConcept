@@ -24,8 +24,24 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>WebConceptSite création de site internet</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+    <meta name="description" content="Web-concept-site Création de site internet standard, site wordpress, site vitrine, site web e-commerce pour les particuliers et entreprises à Monteux et dans le Vaucluse.">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34685582-1"></script>
+
+    <script>
+
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag(){dataLayer.push(arguments);}
+
+        gtag('js', new Date());
+
+
+
+        gtag('config', 'UA-34685582-1');
+
+    </script>
 
   <!-- Favicons -->
   <link href="assets/img/favicon.png" rel="icon">
@@ -67,8 +83,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="https://github.com/laurent-allegre" class="twitter"><i class="bi bi-github"></i></a>
-        <a href="https://www.linkedin.com/in/laurent-allegre-72225a93/" class="linkedin"><i
-            class="bi bi-linkedin"></i></a>
+        <a href="https://www.linkedin.com/in/laurent-allegre-72225a93/" class="linkedin"><i class="bi bi-linkedin"></i></a>
       </div>
     </div>
   </section><!-- End Top Bar-->
@@ -182,7 +197,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="100">
             <div class="box">
               <div class="icon"><i class="bi bi-briefcase"></i></div>
-              <h4 class="title"><a href="">Sites sur mesure</a></h4>
+              <h4 class="title">Sites sur mesure</h4>
               <p class="description">Je vous propose de créer votre site web entièrement sur mesure afin de répondre à
                 vos besoins spécifiques (création de site vitrine de site E-commerce ...)<br>
                 Développement de site Web standard ou sous WordPress.
@@ -193,7 +208,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="box">
               <div class="icon"><i class="bi bi-pc-display-horizontal"></i></div>
-              <h4 class="title"><a href="">Développement Web</a></h4>
+              <h4 class="title">Développement Web</h4>
               <p class="description">Création de sites Web et mobile. Programmation Html5 css3 / Bootstrap / Javascript / PHP / Symfony <br>
                  Ainsi que des sites sous cms Wordpress / Woocommerce.</p>
             </div>
@@ -202,7 +217,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <div class="box">
               <div class="icon"><i class="bi bi-shield-lock"></i></div>
-              <h4 class="title"><a href="">Sécurité Web</a></h4>
+              <h4 class="title">Sécurité Web</h4>
               <p class="description">Nous nous efforçons de garantir que tous nos sites respectent les normes
                 d'accessibilité exigées par le World Wide Web Consortium.
                 Nos sites Web sont testés dans les navigateurs les plus couramment utilisés avec différentes résolutions
@@ -214,7 +229,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
             <div class="box">
               <div class="icon"><i class="bi bi-camera-fill"></i></div>
-              <h4 class="title"><a href="">Hébergement et Services-photos</a></h4>
+              <h4 class="title">Services-photos et Hébergement</h4>
               <p class="description">Fort d'une grande expérience professionnelle dans la photographie je peux réaliser les photos pour votre site.<br>
                   nous vous conseillons au sujet du choix de votre nom de domaine et de votre hébergement.
 
