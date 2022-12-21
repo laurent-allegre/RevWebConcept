@@ -23,7 +23,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>WebConceptSite Template</title>
+  <title>WebConceptSite création de site internet</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -50,6 +50,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
   <link href="assets/css/style.css" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/contact.css">
+  <link rel="stylesheet" href="assets/css/cartes.css">
 
 
 </head>
@@ -183,7 +184,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
               <div class="icon"><i class="bi bi-briefcase"></i></div>
               <h4 class="title"><a href="">Sites sur mesure</a></h4>
               <p class="description">Je vous propose de créer votre site web entièrement sur mesure afin de répondre à
-                vos besoins spécifiques.
+                vos besoins spécifiques (création de site vitrine de site E-commerce ...)<br>
                 Développement de site Web standard ou sous WordPress.
               </p>
             </div>
@@ -191,16 +192,16 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="200">
             <div class="box">
-              <div class="icon"><i class="bi bi-card-checklist"></i></div>
+              <div class="icon"><i class="bi bi-pc-display-horizontal"></i></div>
               <h4 class="title"><a href="">Développement Web</a></h4>
-              <p class="description">Création de sites Web et mobile. Programmation Html5 css3 / Javascript / PHP
-                /Bootstrap et aussi des sites sous cms wordpress.</p>
+              <p class="description">Création de sites Web et mobile. Programmation Html5 css3 / Bootstrap / Javascript / PHP / Symfony <br>
+                 Ainsi que des sites sous cms Wordpress / Woocommerce.</p>
             </div>
           </div>
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="300">
             <div class="box">
-              <div class="icon"><i class="bi bi-bar-chart"></i></div>
+              <div class="icon"><i class="bi bi-shield-lock"></i></div>
               <h4 class="title"><a href="">Sécurité Web</a></h4>
               <p class="description">Nous nous efforçons de garantir que tous nos sites respectent les normes
                 d'accessibilité exigées par le World Wide Web Consortium.
@@ -212,10 +213,11 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
           <div class="col-lg-6" data-aos="fade-up" data-aos-delay="400">
             <div class="box">
-              <div class="icon"><i class="bi bi-binoculars"></i></div>
+              <div class="icon"><i class="bi bi-camera-fill"></i></div>
               <h4 class="title"><a href="">Hébergement et Services-photos</a></h4>
-              <p class="description">Conseils pour le choix de votre nom de domaine ainsi que de l'hébergement.
-                Fort d'une grande experience dans la photographie je peux realiser les photos pour votre site.
+              <p class="description">Fort d'une grande expérience professionnelle dans la photographie je peux réaliser les photos pour votre site.<br>
+                  nous vous conseillons au sujet du choix de votre nom de domaine et de votre hébergement.
+
               </p>
             </div>
           </div>
@@ -224,11 +226,49 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
       </div>
     </section><!-- End Services Section -->
+    <section> <!-- Création d'un site web -->
+        <div class="row justify-content-center">
+            <h2 class="text-center">Les étapes de la création d’un site internet</h2>
+            <figure class="snip1390">
+                <img src="assets/img/calender.jpg" alt="profile-sample3" class="profile" />
+                <figcaption>
+                    <h2>rendez vous</h2>
+                    <blockquote>On communiquera avec vous par téléphone ou en présentiel afin de recueillir vos besoins.</blockquote>
+                </figcaption>
+            </figure>
+            <figure class="snip1390">
+                <img src="assets/img/meeting.jpg" alt="profile-sample3" class="profile" />
+                <figcaption>
+                    <h2>Planification</h2>
+                    <blockquote>Vous nous transmettez votre contenu (photos, textes, idées...) et nous réalisons l'architecture du site.</blockquote>
+                </figcaption>
+            </figure>
 
+            <figure class="snip1390"><img src="assets/img/desk.jpg" alt="profile-sample6" class="profile" />
+                <figcaption>
+                    <h2>Création</h2>
+                    <blockquote>Nos concepteurs lancent la production de votre site Web et intègrent votre contenu.</blockquote>
+                </figcaption>
+            </figure>
+            <figure class="snip1390"><img src="assets/img/check.jpg" alt="profile-sample6" class="profile" />
+                <figcaption>
+                    <h2>Validation</h2>
+                    <blockquote>Vous validez le développement et la conception et nous donnez le feu vert pour le mettre en ligne.</blockquote>
+                </figcaption>
+            </figure>
+            <figure class="snip1390"><img src="assets/img/shopping.jpg" alt="profile-sample6" class="profile" />
+                <figcaption>
+                    <h2>Mise en ligne</h2>
+                    <blockquote>Nous publions votre site et le rendons visible sur Google et les principaux moteurs de recherche.</blockquote>
+                </figcaption>
+            </figure>
+        </div>
+
+    </section>
 
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio section-bg">
+    <section id="portfolio" class="portfolio section-bg   bg-light">
       <div class="container">
 
         <div class="section-title">
@@ -246,28 +286,29 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             </ul>
           </div> -->
         </div>
+        <div class="container">
+            <div class="row portfolio-container">
+                <?php foreach ($cartes as $carte) : ?>
+                    <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item  mb-4">
+                        <div class="portfolio-wrap">
+                            <img src="assets/img/portfolio/<?= $carte['images']; ?>" class="img-fluid" alt="image du site choisis">
+                            <div class="portfolio-info">
+                                <h4><?= $carte['titre']; ?></h4>
+                                <p><?= $carte['info']; ?></p> <br>
+                                <p><?= $carte['langages']; ?></p>
+                            </div>
+                            <div class="portfolio-links">
+                                <a href="assets/img/portfolio/<?= $carte['images']; ?>" data-gall="portfolioGallery" class="venobox"
+                                   title="le lien"><i class="bx bx-plus"></i></a>
+                                <a href="<?= $carte['liens']; ?>" title="Lien vers le site"><i class="bx bx-link"></i></a>
+                            </div>
+                        </div>
+                    </div>
 
-        <div class="row portfolio-container">
-            <?php foreach ($cartes as $carte) : ?>
-              <div class="col-12 col-xs-12 col-lg-4 col-md-6 portfolio-item  mb-4">
-                <div class="portfolio-wrap">
-                  <img src="assets/img/portfolio/<?= $carte['images']; ?>" class="img-fluid" alt="image du site choisis">
-                      <div class="portfolio-info">
-                        <h4><?= $carte['titre']; ?></h4>
-                        <p><?= $carte['info']; ?></p> <br>
-                        <p><?= $carte['langages']; ?></p>
-                      </div>
-                      <div class="portfolio-links">
-                        <a href="assets/img/portfolio/<?= $carte['images']; ?>" data-gall="portfolioGallery" class="venobox"
-                          title="le lien"><i class="bx bx-plus"></i></a>
-                        <a href="<?= $carte['liens']; ?>" title="Lien vers le site"><i class="bx bx-link"></i></a>
-                      </div>
-                </div>
-              </div>
-
-            <?php endforeach; ?>
-
+                <?php endforeach; ?>
+            </div>
         </div>
+
 
       </div>
     </section><!-- End Portfolio Section -->

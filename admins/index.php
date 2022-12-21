@@ -57,7 +57,7 @@ try{
 </header><!-- End Header -->
 
 <!--==================== LISTE DES VEHICULES=======================-->
-<div class="container admin mt-5">
+<div class="container-fluid admin mt-5">
     <div class="row table-responsive">
         <h2><strong>Liste des Sites :</strong><a href="insert.php" type="button" class="btn btn-success btn-sm ms-3"><span class="fas fa-plus"></span> Ajouter</a><a href="../index.php" type="button" class="btn btn-primary btn-sm ms-1"><span class="fas fa-arrow-left"></span> retour </a><a href="logout.php" type="button" class="btn btn-danger btn-sm ms-1"><span class="fas fa-exclamation-triangle"></span> Déconnexion </a></h2>
 
@@ -88,7 +88,7 @@ try{
 
 
                 echo '<td class="action">';
-                echo '<a type="button"class="btn btn-outline-secondary btn-sm" href="view.php?id=' . $item['id'] .'"><span class="fas fa-eye"></span>  voir</a>';
+
                 echo ' ';
                 echo '<a type="button"class="btn btn-primary btn-sm" href="update.php?id=' . $item['id'] .'"><span class="fas fa-edit"></span>  Modifier</a>';
                 echo ' ';
