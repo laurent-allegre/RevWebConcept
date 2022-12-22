@@ -16,7 +16,7 @@ try{
     echo $pe->getMessage();
 }
 ?>
-
+<?php echo password_hash("Tamron100@400", PASSWORD_DEFAULT); ?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>

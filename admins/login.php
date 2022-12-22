@@ -59,7 +59,7 @@ if (isset($_POST) && !empty($_POST)) {
 
 <body>
     <h1>Connexion</h1>
-   <?php echo password_hash("test", PASSWORD_DEFAULT); ?>
+
     <!--==================== FORMULAIRE LOGIN ADMIN  =======================-->
     <div class="login-page bg-light">
         <div class="container">
