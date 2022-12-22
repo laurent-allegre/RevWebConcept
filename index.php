@@ -22,22 +22,18 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>WebConceptSite création de site internet</title>
+  <meta name="robots" content="all" />
+  <title>WebConceptSite création de site internet Monteux Vaucluse</title>
     <meta name="description" content="Web-concept-site Création de site internet standard, site wordpress, site vitrine, site web e-commerce pour les particuliers et entreprises à Monteux et dans le Vaucluse.">
     <!-- Global site tag (gtag.js) - Google Analytics -->
-
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-34685582-1"></script>
-
-    <script>
+        <script>
 
         window.dataLayer = window.dataLayer || [];
 
         function gtag(){dataLayer.push(arguments);}
 
         gtag('js', new Date());
-
-
 
         gtag('config', 'UA-34685582-1');
 
@@ -146,7 +142,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <div class="row mt-5">
           <div class="col-lg-6 about-img">
-            <img src="assets/img/log.png" alt="">
+            <img src="assets/img/log.png" alt="logo du site webConceptSite">
           </div>
 
           <div class="col-lg-6 content">
@@ -247,33 +243,33 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <div class="row justify-content-center chapitre">
                 <h2 class="text-center">Les étapes de la création d’un site internet</h2>
                 <figure class="snip1390">
-                    <img src="assets/img/calender.jpg" alt="profile-sample3" class="profile" />
+                    <img src="assets/img/calender.jpg" alt="image calendrier" class="profile" />
                     <figcaption>
                         <h2>rendez vous</h2>
                         <blockquote>On communiquera avec vous par téléphone ou en présentiel afin de recueillir vos besoins.</blockquote>
                     </figcaption>
                 </figure>
                 <figure class="snip1390">
-                    <img src="assets/img/meeting.jpg" alt="profile-sample3" class="profile" />
+                    <img src="assets/img/meeting.jpg" alt="image réunions" class="profile" />
                     <figcaption>
                         <h2>Planification</h2>
                         <blockquote>Vous nous transmettez votre contenu (photos, textes, idées...) et nous réalisons l'architecture du site.</blockquote>
                     </figcaption>
                 </figure>
 
-                <figure class="snip1390"><img src="assets/img/desk.jpg" alt="profile-sample6" class="profile" />
+                <figure class="snip1390"><img src="assets/img/desk.jpg" alt="image bureau création" class="profile" />
                     <figcaption>
                         <h2>Création</h2>
                         <blockquote>Nos concepteurs lancent la production de votre site Web et intègrent votre contenu.</blockquote>
                     </figcaption>
                 </figure>
-                <figure class="snip1390"><img src="assets/img/check.jpg" alt="profile-sample6" class="profile" />
+                <figure class="snip1390"><img src="assets/img/check.jpg" alt="image de confirmation de validation" class="profile" />
                     <figcaption>
                         <h2>Validation</h2>
                         <blockquote>Vous validez le développement et la conception et nous donnez le feu vert pour le mettre en ligne.</blockquote>
                     </figcaption>
                 </figure>
-                <figure class="snip1390"><img src="assets/img/shopping.jpg" alt="profile-sample6" class="profile" />
+                <figure class="snip1390"><img src="assets/img/shopping.jpg" alt="image mise en ligne su site" class="profile" />
                     <figcaption>
                         <h2>Mise en ligne</h2>
                         <blockquote>Nous publions votre site et le rendons visible sur Google et les principaux moteurs de recherche.</blockquote>
