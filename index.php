@@ -76,10 +76,11 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
-      <div class="contact-info d-flex align-items-center">
-        <i class="bi bi-envelope d-flex align-items-center"><a
+      <!--x-->
+        <div class="contact-info d-flex align-items-center ">
+        <i class="bi bi-envelope d-flex align-items-center hidden-mobile"><a
             href="mailto:contact@example.com">laurent.allegre@web-concept-site.fr</a></i>
-        <i class="bi bi-phone d-flex align-items-center ms-4"><span>06 89 38 34 90</span></i>
+        <i class="bi bi-phone d-flex align-items-center ms-4 hidden-mobile"><span>06 89 38 34 90</span></i>
       </div>
       <div class="social-links d-none d-md-flex align-items-center">
         <a href="https://github.com/laurent-allegre" class="twitter"><i class="bi bi-github"></i></a>
@@ -242,42 +243,45 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
       </div>
     </section><!-- End Services Section -->
     <section> <!-- Création d'un site web -->
-        <div class="row justify-content-center">
-            <h2 class="text-center">Les étapes de la création d’un site internet</h2>
-            <figure class="snip1390">
-                <img src="assets/img/calender.jpg" alt="profile-sample3" class="profile" />
-                <figcaption>
-                    <h2>rendez vous</h2>
-                    <blockquote>On communiquera avec vous par téléphone ou en présentiel afin de recueillir vos besoins.</blockquote>
-                </figcaption>
-            </figure>
-            <figure class="snip1390">
-                <img src="assets/img/meeting.jpg" alt="profile-sample3" class="profile" />
-                <figcaption>
-                    <h2>Planification</h2>
-                    <blockquote>Vous nous transmettez votre contenu (photos, textes, idées...) et nous réalisons l'architecture du site.</blockquote>
-                </figcaption>
-            </figure>
+        <div class="container-fluid">
+            <div class="row justify-content-center chapitre">
+                <h2 class="text-center">Les étapes de la création d’un site internet</h2>
+                <figure class="snip1390">
+                    <img src="assets/img/calender.jpg" alt="profile-sample3" class="profile" />
+                    <figcaption>
+                        <h2>rendez vous</h2>
+                        <blockquote>On communiquera avec vous par téléphone ou en présentiel afin de recueillir vos besoins.</blockquote>
+                    </figcaption>
+                </figure>
+                <figure class="snip1390">
+                    <img src="assets/img/meeting.jpg" alt="profile-sample3" class="profile" />
+                    <figcaption>
+                        <h2>Planification</h2>
+                        <blockquote>Vous nous transmettez votre contenu (photos, textes, idées...) et nous réalisons l'architecture du site.</blockquote>
+                    </figcaption>
+                </figure>
 
-            <figure class="snip1390"><img src="assets/img/desk.jpg" alt="profile-sample6" class="profile" />
-                <figcaption>
-                    <h2>Création</h2>
-                    <blockquote>Nos concepteurs lancent la production de votre site Web et intègrent votre contenu.</blockquote>
-                </figcaption>
-            </figure>
-            <figure class="snip1390"><img src="assets/img/check.jpg" alt="profile-sample6" class="profile" />
-                <figcaption>
-                    <h2>Validation</h2>
-                    <blockquote>Vous validez le développement et la conception et nous donnez le feu vert pour le mettre en ligne.</blockquote>
-                </figcaption>
-            </figure>
-            <figure class="snip1390"><img src="assets/img/shopping.jpg" alt="profile-sample6" class="profile" />
-                <figcaption>
-                    <h2>Mise en ligne</h2>
-                    <blockquote>Nous publions votre site et le rendons visible sur Google et les principaux moteurs de recherche.</blockquote>
-                </figcaption>
-            </figure>
+                <figure class="snip1390"><img src="assets/img/desk.jpg" alt="profile-sample6" class="profile" />
+                    <figcaption>
+                        <h2>Création</h2>
+                        <blockquote>Nos concepteurs lancent la production de votre site Web et intègrent votre contenu.</blockquote>
+                    </figcaption>
+                </figure>
+                <figure class="snip1390"><img src="assets/img/check.jpg" alt="profile-sample6" class="profile" />
+                    <figcaption>
+                        <h2>Validation</h2>
+                        <blockquote>Vous validez le développement et la conception et nous donnez le feu vert pour le mettre en ligne.</blockquote>
+                    </figcaption>
+                </figure>
+                <figure class="snip1390"><img src="assets/img/shopping.jpg" alt="profile-sample6" class="profile" />
+                    <figcaption>
+                        <h2>Mise en ligne</h2>
+                        <blockquote>Nous publions votre site et le rendons visible sur Google et les principaux moteurs de recherche.</blockquote>
+                    </figcaption>
+                </figure>
+            </div>
         </div>
+
 
     </section>
 
@@ -314,7 +318,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                             </div>
                             <div class="portfolio-links">
                                 <a href="assets/img/portfolio/<?= $carte['images']; ?>" data-gall="portfolioGallery" class="venobox"
-                                   title="le lien"><i class="bx bx-plus"></i></a>
+                                   title="Agrandir l'image"><i class="bx bx-plus"></i></a>
                                 <a href="<?= $carte['liens']; ?>" title="Lien vers le site"><i class="bx bx-link"></i></a>
                             </div>
                         </div>

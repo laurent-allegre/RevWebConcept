@@ -124,6 +124,12 @@ h6 {
   border-left: 0;
 }
 
+@media (max-width: 767px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -552,6 +558,7 @@ section {
   margin: 0;
 }
 
+
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
@@ -747,6 +754,16 @@ section {
     text-align: center;
   }
 }
+/* Création d'un site Section
+--------------------------------*/
+.chapitre h2{
+  font-size: 32px;
+  color: #0c2e8a;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding-bottom: 20px;
+
+}
 
 
 
@@ -758,7 +775,7 @@ section {
   margin-bottom: 15px;
   padding-bottom: 15px;
   position: relative;
-  color: #345676;
+  color: #0c2e8a;
 }
 #portfolio {
   background: #fff;
@@ -892,7 +909,7 @@ section {
 }
 
 .portfolio .portfolio-wrap .portfolio-links a:hover {
-  color: #e684ae;
+  color: #50d8af;
 }
 
 .portfolio .portfolio-wrap:hover::before {
