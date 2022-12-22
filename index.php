@@ -253,7 +253,7 @@ $cartes = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <img src="assets/img/meeting.jpg" alt="image réunions" class="profile" />
                     <figcaption>
                         <h2>Planification</h2>
-                        <blockquote>Vous nous transmettez votre contenu (photos, textes, idées...) et nous réalisons l'architecture du site.</blockquote>
+                        <blockquote>Vous nous envoyez votre dossier: (textes, photos) et nous échangeons sur l'architecture du site.</blockquote>
                     </figcaption>
                 </figure>
 
