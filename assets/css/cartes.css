@@ -51,6 +51,13 @@ figure.snip1390 blockquote {
     text-align: left;
     position: relative;
 }
+
+@media (max-width: 640px) {
+    figure.snip1390 blockquote {
+      font-size: 20px;
+    }
+  }
+
 figure.snip1390 blockquote:before {
     font-family: 'FontAwesome';
     content: "\201C";

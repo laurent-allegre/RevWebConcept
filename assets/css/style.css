@@ -742,6 +742,12 @@ section {
     margin-bottom: 20px;
   }
 
+  @media (max-width: 640px) {
+    #services .box p {
+      font-size: 20px;
+    }
+  }
+
   #services .box .icon {
     float: none;
     text-align: center;
@@ -754,6 +760,8 @@ section {
     text-align: center;
   }
 }
+
+
 /* Création d'un site Section
 --------------------------------*/
 .chapitre h2{
